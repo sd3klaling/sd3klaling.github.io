@@ -199,16 +199,15 @@ height: 100dvh;
                 getInfo();
             });
             function getInfo(){
-                let hash = window.location.hash.substr(1) * 1;
-                fetch('./ptk.json').then(res => res.json()[hash]).then(data =>{
+                let id = window.location.hash.substr(1) * 1;
+                fetch('./ptk.json').then(res => res.json()).then(data =>{
                     $('.img-avatar>img').addClass('hide');
-                    $('h3').text(data.nama);
-                    $('.title').text(data.jabatan);
-                    $('.nip>a:nth-child(2)').text(data.nip);
-                    $('.icons>div:nth-child(2) a').text(data.email);
-                    $('.icons>div:nth-child(1) a').text(data.phone)
-                    imageLoader(data.photo);
-                    console.log(data);
+                    $('h3').text(data[id].nama);
+                    $('.title').text(data[id].jabatan);
+                    $('.nip>a:nth-child(2)').text(data[id].nip);
+                    $('.icons>div:nth-child(2) a').text(data[id].email);
+                    $('.icons>div:nth-child(1) a').text(data[id].phone)
+                    imageLoader(data[id].photo);
                 });
             };
             $(window).bind('hashchange', getInfo);
