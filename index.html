@@ -9,10 +9,10 @@
             body {
             font-family: Roboto, sans-serif;
             margin: 0;
-            height: 100vh;
-            display: grid;
+            display: flex;
+height: 100dvh;
             align-items: center;
-            justify-items: center;
+            justify-content: center;
             background-color: #333c4c;
             }
             .card {
@@ -204,7 +204,7 @@
                 getInfo();
             });
             function getInfo(){
-                let hash = window.location.hash.substr(1);
+                let hash = window.location.hash.substr(1) * 1;
                 $('.img-avatar>img').addClass('hide');
                 $('h3').text(dataGuru[hash].nama);
                 $('.title').text(dataGuru[hash].jabatan);
