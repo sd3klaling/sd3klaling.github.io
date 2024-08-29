@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <style>
             @import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
@@ -17,7 +17,7 @@
             .card {
             background: #fff;
             border-radius: 4px;
-            /* box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.5); */
+             
             width: 400px;
             max-width: 400px;
             max-height: 400px;
@@ -115,6 +115,8 @@
             border-top-left-radius: 20px;
             border-bottom-left-radius: 20px;
             background-color: #2999c9;
+             
+            }
 
             button {
             border: none;
@@ -146,7 +148,7 @@
                 text-align: right;
             }
 
-            .logo-bsre {
+            .card .logo-bsre {
                 width: 26.4px;
                 height: 30px;
                 padding-left: 0.2rem;
@@ -190,17 +192,16 @@
         </style>
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
         <script>
-            google.script.history.setChangeHandler(function (e) {
-              getData(e.location.hash);
-            });
+            // google.script.history.setChangeHandler(function (e) {
+            //   getData(e.location.hash);
+            // });
 
-            window.onload = function(){
-              document.getElementById("warning").setAttribute('style','display:none !important')
-              google.script.url.getLocation(function(location) {
-                getData(location.hash);
-              });
+            // window.onload = function(){
+            //   google.script.url.getLocation(function(location) {
+            //     getData(location.hash);
+            //   });
               
-            }
+            // }
 
             function imageLoader(link){
               let imageLoad = new Image();
@@ -218,21 +219,21 @@
 
             function getData(hash){
               $('.img-avatar>img').addClass('hide');
-              google.script.run.withSuccessHandler(data => {
-                $('h3').text(data.nama);
-                $('.title').text(data.jabatan);
-                $('.nip>a:nth-child(2)').text(data.nip);
-                $('.icons>div:nth-child(2) a').text(data.email);
-                $('.icons>div:nth-child(1) a').text(data.phone)
-                imageLoader(data.photo);
-              }).dataGuru(hash);
+            //   google.script.run.withSuccessHandler(data => {
+            //     $('h3').text(data.nama);
+            //     $('.title').text(data.jabatan);
+            //     $('.nip>a:nth-child(2)').text(data.nip);
+            //     $('.icons>div:nth-child(2) a').text(data.email);
+            //     $('.icons>div:nth-child(1) a').text(data.phone)
+            //     imageLoader(data.photo);
+            //   }).dataGuru(hash);
             };
         </script>
     </head>
     <body>
             <div class="card">
                 <div class="img-avatar">
-                    <img/>
+                    <img class="hide">
                 </div>
                 <div class="card-text">
                     <div class="portada"></div>
@@ -250,18 +251,14 @@
                                 <div><i class="fa fa-globe"></i><a>https://sd3klaling.kuduskab.go.id</a></div>
                             </div>
                             <div class="footer">
-                                <div class="desc">Tanda tangan elektronik resmi dan terdaftar di <strong><a href='https://bsre.bssn.go.id' target="_blank">Balai Sertifikasi Elektronik</a></strong></div>
-                                <img class="logo-bsre" src="https://simkeu.dev.ugm.ac.id/ugmfw-assets/images/bsre.png" loading="lazy" />
+                                <div class="desc">Tanda tangan elektronik resmi dan terdaftar di <strong><a href="https://bsre.bssn.go.id" target="_blank">Balai Sertifikasi Elektronik</a></strong></div>
+                                <img class="logo-bsre" src="https://simkeu.dev.ugm.ac.id/ugmfw-assets/images/bsre.png" loading="lazy">
                             </div>
-                            <!-- <div class="actions">
-                                <button><a href="https://wa.me/6285159174633"><i class="far fa-heart"></i></a></button>
-                                <button><i class="far fa-envelope"></i></button>
-                                <button><i class="fas fa-user-friends"></i></button>
-                            </div> -->
+                            
                         </div>
                     
                 </div>
             </div>
 
-    </body>
-</html>
+    
+</body></html>
