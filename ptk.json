@@ -1,0 +1,26 @@
+[
+    {
+        "nama": "Dra. Dinna Amriyati", 
+        "jabatan": "Kepala Sekolah", 
+        "photo": "https://drive.google.com/thumbnail?id=1gyaZm7MvL48inUIkWEFSCdX11BfGTrDr&sz=w1000", 
+        "nip": "196704051988102001", 
+        "email": "dinna.amriyati@kuduskab.go.id", 
+        "phone": "0815 7586 6917"
+    },
+    {
+        "nama": "Triantingtyas Marta Dewi, S.Pd", 
+        "jabatan": "Guru Kelas 3", 
+        "photo": "https://drive.google.com/thumbnail?id=1E-80JL5wP8zNJsWrGy9FeerTs-VoCR_I&sz=w1000", 
+        "nip": "198909302019032008", 
+        "email": "marta.dewi@kuduskab.go.id", 
+        "phone": "0857 4078 6860"
+    },
+    {
+        "nama": "Sutikno, S.Pd", 
+        "jabatan": "Guru Kelas 6", 
+        "photo": "https://drive.google.com/thumbnail?id=11nPGqjnUsHFcjA09enDGfrPOL-5VmEmL&sz=w1000", 
+        "nip": "197907202014061007", 
+        "email": "sutikno@kuduskab.go.id", 
+        "phone": "0816 668 836"
+    }
+]
