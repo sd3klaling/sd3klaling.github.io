@@ -200,7 +200,7 @@ height: 100dvh;
             });
             function getInfo(){
                 let id = window.location.hash.substr(1) * 1;
-                fetch('./ptk.json').then(res => res.json()).then(data =>{
+                fetch('./assets/ptk.json').then(res => res.json()).then(data =>{
                     $('.img-avatar>img').addClass('hide');
                     $('h3').text(data[id].nama);
                     $('.title').text(data[id].jabatan);
