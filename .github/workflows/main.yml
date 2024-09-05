@@ -12,3 +12,5 @@ jobs:
           cd docs/
           echo ${{ toJson(github.event.client_payload) }}
           ./fetch.sh ${{ github.event.client_payload.pageid }}
+          git add . && git commit -m 'halaman baru'
+          git push
