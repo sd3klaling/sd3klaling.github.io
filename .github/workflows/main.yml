@@ -10,6 +10,7 @@ jobs:
       - name: Run fetch
         run: |
           cd program
+          echo $(pwd)
           echo ${{ toJson(github.event.client_payload) }}
           ./fetcher.sh ${{ github.event.client_payload.pageid }}
           git add . && git commit -m 'halaman baru'
