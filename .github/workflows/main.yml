@@ -9,8 +9,8 @@ jobs:
         uses: actions/checkout@v4
       - name: Run fetch
         run: |
-          cd fetcher/
+          cd program
           echo ${{ toJson(github.event.client_payload) }}
-          ./fetch.sh ${{ github.event.client_payload.pageid }}
+          ./fetcher.sh ${{ github.event.client_payload.pageid }}
           git add . && git commit -m 'halaman baru'
           git push
