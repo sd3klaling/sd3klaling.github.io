@@ -1,0 +1,11 @@
+on:
+  repository_dispatch:
+    types: [fetch]
+jobs:
+  fetching:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Chekcout
+        uses: actions/checkout@v4
+      - name: Run fetch
+        run: |
