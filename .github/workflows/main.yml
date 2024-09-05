@@ -1,9 +1,12 @@
+name: FETCHER
 on:
   repository_dispatch:
     types: [fetch]
 jobs:
   fetching:
     runs-on: ubuntu-latest
+    env:
+      pageid: ${{ github.event.client_payload.pageid }}
     steps:
       - name: Chekcout
         uses: actions/checkout@v4
@@ -13,6 +16,7 @@ jobs:
           echo $(ls)
           echo ${{ toJson(github.event.client_payload) }}
           chmod 755 fetcher.sh
-          bash fetcher.sh ${{ github.event.client_payload.pageid }}
-          git add . && git commit -m 'halaman baru'
+          fetcher.sh $pageid
+          git add .
+          git commit -m 'halaman baru'
           git push
