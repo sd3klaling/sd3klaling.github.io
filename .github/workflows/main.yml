@@ -16,7 +16,7 @@ jobs:
           echo $(ls)
           echo ${{ toJson(github.event.client_payload) }}
           chmod 755 fetcher.sh
-          ./fetcher.sh $pageid
+          ./fetcher.sh "$pageid"
           git add .
           git commit -m 'halaman baru'
           git push
