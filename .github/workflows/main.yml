@@ -9,3 +9,6 @@ jobs:
         uses: actions/checkout@v4
       - name: Run fetch
         run: |
+          cd docs/
+          echo ${{ toJson(github.event.client_payload) }}
+          ./fetch.sh ${{ github.event.client_payload.pageid }}
