@@ -30,4 +30,4 @@ function fetchAll(){
 }
 fetchAll
 chap="$(grep -Po "(?<=\{\"id\":$1,\")title...\K\d+" <<< $temp | head -1)"
-echo $content > "chapter$chap.html"
+echo $content > "../docs/novel/chapter$chap.html"
