@@ -12,6 +12,8 @@ jobs:
         working-directory: program
         shell: bash
         run: |
+          git config --global user.email "opssd3klaling@gmail.com"
+          git config --global user.name "abilz"
           ./fetcher.sh ${{ toJson(github.event.client_payload.pageid) }}
           git add .
           git commit -m 'halaman baru'

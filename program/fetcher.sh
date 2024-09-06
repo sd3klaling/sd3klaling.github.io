@@ -9,7 +9,7 @@ chap=0
 #grep -Po '(\{"id(?=.{13}title)|(?<=\{"id":.{11})title)":"?\K[^,"]+' data.txt
 
 function fetch(){
- temp=$(curl $url$page)
+ temp=$(curl -swf $url$page)
  
 }
 
