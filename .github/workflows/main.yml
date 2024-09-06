@@ -9,12 +9,10 @@ jobs:
       - name: Chekcout
         uses: actions/checkout@v4
       - name: Run fetch
+        working-directory: program
+        shell: bash
         run: |
-          cd program
-          echo $(ls)
-          echo ${{ toJson(github.event.client_payload) }}
-          chmod 755 fetcher.sh
-          ./fetcher.sh ${{ github.event.client_payload.pageid }}
+          ./fetcher.sh ${{ toJson(github.event.client_payload.pageid) }}
           git add .
           git commit -m 'halaman baru'
           git push
