@@ -1,9 +1,11 @@
 #!/bin/bash
+set -e
 
 IFS=$'\n'
 url="https://www.wattpad.com/$1-wn-part-1-hazure-waku-no-%E3%80%90joutai-ijou-sukiru%E3%80%91de"
 page=""
 content=""
+template='<!DOCTYPE html><html><body style="margin: 0;padding: 0;width: 100vw;font-size: 20px;"><div style="padding: 30px 25px;">'
 temp=""
 chap=0
 
@@ -14,7 +16,7 @@ function fetch(){
 
 function fetchAll(){
  fetch
- content=$(grep -oP '<p data-p-id.+</p>' <<< $temp)
+ content="${content} $(grep -oP '<p data-p-id.+</p>' <<< $temp)"
  totalPages=$(grep -Po '"pages":\K\d+?' <<< $temp)
  
  if [[ $totalPages -gt 1 ]]
@@ -36,5 +38,6 @@ if [[ -z $content ]]
 then
     echo "something seems wrong"
 else
-    echo $content > ../docs/novel/chapter$chap.html
+	content="$template $content </body></html>"
+    echo $content > ./docs/novel/chapter${chap}.html
 fi
