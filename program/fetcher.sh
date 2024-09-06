@@ -39,5 +39,5 @@ then
     echo "something seems wrong"
 else
 	content="$template $content </body></html>"
-    echo $content > ./docs/novel/chapter${chap}.html
+    echo $content > ../docs/novel/chapter${chap}.html
 fi
