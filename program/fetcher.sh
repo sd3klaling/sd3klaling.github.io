@@ -9,7 +9,7 @@ chap=0
 #grep -Po '(\{"id(?=.{13}title)|(?<=\{"id":.{11})title)":"?\K[^,"]+' data.txt
 
 function fetch(){
- temp=$(curl -swf $url$page)
+ temp=$(curl -f $url$page)
  
 }
 
@@ -30,4 +30,4 @@ function fetchAll(){
 }
 fetchAll
 chap="$(grep -Po "(?<=\{\"id\":$1,\")title...\K\d+" <<< $temp | head -1)"
-echo $content > "../docs/novel/chapter$chap.html"
+[[ $content -ne "" ]] && $content > "../docs/novel/chapter$chap.html"
