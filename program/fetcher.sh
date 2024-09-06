@@ -7,7 +7,6 @@ content=""
 temp=""
 chap=0
 
-#grep -Po '(\{"id(?=.{13}title)|(?<=\{"id":.{11})title)":"?\K[^,"]+' data.txt
 
 function fetch(){
  temp=$(curl -L "$url$page" -H 'Cache-Control: no-cache')
@@ -17,7 +16,7 @@ function fetchAll(){
  fetch
  content=$(grep -oP '<p data-p-id.+</p>' <<< $temp)
  totalPages=$(grep -Po '"pages":\K\d+?' <<< $temp)
- echo "total pages : "$totalPages
+ 
  if [[ $totalPages -gt 1 ]]
  then
      temp=""
