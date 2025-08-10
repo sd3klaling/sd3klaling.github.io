@@ -14,7 +14,6 @@ document.getElementById("play").onclick=()=>{
 }
 
 function getContent(){
-    console.log('asd');
     if(linkNovel){
         fetch(linkNovel).then(r=>{
             if (!response.ok) {
@@ -32,7 +31,7 @@ function getContent(){
 
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js')
+        navigator.serviceWorker.register('./scripts/sw.js')
             .then(registration => {
                 console.log('Service Worker berhasil didaftarkan: ', registration.scope);
             })
