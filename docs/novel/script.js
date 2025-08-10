@@ -13,9 +13,7 @@ document.getElementById("play").onclick=()=>{
     synth.speak(utterance);
 }
 
-function getContent(){
-    console.log('asd');
-    if(linkNovel){
+function getContent(){if(linkNovel){
         fetch(linkNovel).then(r=>{
             if (!response.ok) {
               throw new Error('Gagal mengambil data: ' + response.statusText);
